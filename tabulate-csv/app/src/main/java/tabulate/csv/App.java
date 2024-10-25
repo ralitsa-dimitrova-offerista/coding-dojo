@@ -3,6 +3,11 @@
  */
 package tabulate.csv;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,5 +15,41 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        // Name;Street;City;Age
+        // Peter Pan;Am Hang 5;12345 Einsam;42
+        // Maria Schmitz;Kölner Straße 45;50123 Köln;43
+        // Paul Meier;Münchener Weg 1;87654 München;65
     }
+
+    private static List<String> csvToTable(String[] csvLines){
+        
+        String[][] rows = new String[csvLines.length][];
+
+        for (int j = 0; j < rows.length; j++) {
+            String line = csvLines[j];
+            rows[j] = line.split(";");    
+        }
+        
+        int[] columnWidths = new int[rows[0].length];
+        for (int i = 0; i < rows.length; i++) {
+            String[] columns = rows[i];
+            for (int j = 0; j < rows[i].length; j++) {
+                if (rows[i][j].length() > columnWidths[j]) {
+                    
+                }
+            }
+        }
+        
+        return null;
+    }
+
+    private static int[] findMaxWidthOfColumns(String[][] csvLinesAndColumn){
+        
+    }
+    
+
 }
+
+// convert to rows
+// find max width for columns
+// do something to add 
