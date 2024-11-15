@@ -12,3 +12,8 @@ plugins {
 
 rootProject.name = 'tabulate-csv'
 include('app')
+
+// Add Java toolchain configuration
+ext {
+    javaVersion = 21
+}
